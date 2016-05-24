@@ -22,22 +22,22 @@ Plugin 'VundleVim/Vundle.vim'       "Let Vundle manage Vundle
 "Plugin 'bling/vim-airline'
 
 Plugin 'tomasr/molokai'
-"wPlugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 "Plugin 'fmoralesc/molokayo'          "Modified Molokai, requires Molokai
 "Plugin 'morhetz/gruvbox'             "Colorscheme
 "Plugin 'freeo/vim-kalisi'
 "Plugin 'altercation/vim-colors-solarized'
 "wPlugin 'scrooloose/syntastic'
-"wPlugin 'kien/ctrlp'
+Plugin 'kien/ctrlp.vim'
 "Plugin 'ervandrew/supertab'
 "Plugin 'jedivim'
 "wPlugin 'vim-scripts/indentpython.vim'"Indent python when auto does not work
 "Plugin 'Valloric/YouCompleteMe'    "Auto completion
 "wPlugin 'nvie/vim-flake8'
-"wPlugin 'jistr/vim-nerdtree-tabs'
-Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
-
-
+Plugin 'jistr/vim-nerdtree-tabs'
+"Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'vim-airline/vim-airline'
+"Plugin 'chriskempson/base16-vim'
 
 let python_highlight_all=1
 
@@ -47,6 +47,7 @@ call vundle#end()
 "=== Color Management ========================================================
 set t_Co=256                        "Use 256 color map
 set background=dark                 "Assume dark background
+"le base16colorspace=256
 colorscheme molokai                 "Use molokai colors
 "colorscheme solarized
 "colorscheme gruvbox
@@ -72,7 +73,7 @@ filetype plugin indent on           "Use plugin indents
 set autoread                        "Reload files modified outside vim
 set mouse=a                         "Use the mouse as a pointer
 set number                          "Display line numbers
-"set relativenumber                 "Show line numbers relative to current
+set relativenumber                 "Show line numbers relative to current
 set encoding=utf-8                  "Use utf-8 as standard encoding
 set ffs=unix,dos,mac                "Use Unix file type
 
@@ -113,7 +114,8 @@ set wildmenu                        "Turn on wildmenu
 set wildignore=*.o,*~,*.pyc         "Ignore compiled files
 set wildmode=list:longest           "Expand menu
 
-
+let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled=1
 
 "=== Screen and User Interface ===============================================
 set hidden                          "Buffer abandoned when hidden
