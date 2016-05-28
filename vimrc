@@ -19,29 +19,35 @@ set rtp+=~/.vim/bundle/Vundle.vim   "Set runtime path to include Vundle
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'       "Let Vundle manage Vundle
-"Plugin 'bling/vim-airline'
-
 Plugin 'tomasr/molokai'
-Plugin 'scrooloose/nerdtree'
-"Plugin 'fmoralesc/molokayo'          "Modified Molokai, requires Molokai
-"Plugin 'morhetz/gruvbox'             "Colorscheme
+Plugin 'Valloric/YouCompleteMe'    "Auto completion
+Plugin 'vim-airline/vim-airline'
+Plugin 'scrooloose/syntastic'
+Plugin 'kien/ctrlp.vim'
+""Plugin 'scrooloose/nerdtree'
+""Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'nvie/vim-flake8'
 "Plugin 'freeo/vim-kalisi'
 "Plugin 'altercation/vim-colors-solarized'
-"wPlugin 'scrooloose/syntastic'
-Plugin 'kien/ctrlp.vim'
 "Plugin 'ervandrew/supertab'
 "Plugin 'jedivim'
-"wPlugin 'vim-scripts/indentpython.vim'"Indent python when auto does not work
-"Plugin 'Valloric/YouCompleteMe'    "Auto completion
-"wPlugin 'nvie/vim-flake8'
-Plugin 'jistr/vim-nerdtree-tabs'
-"Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
-Plugin 'vim-airline/vim-airline'
+"Plugin 'vim-scripts/indentpython.vim'"Indent python when auto does not work
 "Plugin 'chriskempson/base16-vim'
 
 let python_highlight_all=1
 
 call vundle#end()
+
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+let g:syntastic_python_python_exec = '/usr/bin/python3'
 
 
 "=== Color Management ========================================================
